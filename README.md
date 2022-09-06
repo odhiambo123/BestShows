@@ -2,6 +2,11 @@
 Consuming API.
 - Create a new App with empty activity
 - Add depencencies and plugins
+  - app level: 
+    - [gist](https://gist.github.com/17f45e7f888c048ba780c16ff22ce11d)
+  - project level: 
+    - [gist](https://gist.github.com/8367ce8e25d5d58e6a4b6f130663cb97)
+
 - Create the package folder structure
   - app
   - data

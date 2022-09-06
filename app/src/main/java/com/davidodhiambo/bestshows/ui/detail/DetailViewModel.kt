@@ -43,7 +43,12 @@ class DetailViewModel@Inject constructor(private val bestShowsRepository: BestSh
 
     }
 
+    fun getShow(): LiveData<Show> = show
+
+
     fun observeShow(): LiveData<Show> {
         return show
     }
+
+
 }

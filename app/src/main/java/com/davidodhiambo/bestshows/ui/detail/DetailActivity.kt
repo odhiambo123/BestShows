@@ -9,6 +9,7 @@ import coil.load
 import com.davidodhiambo.bestshows.R
 import com.davidodhiambo.bestshows.data.model.Show
 import com.davidodhiambo.bestshows.databinding.ActivityDetailBinding
+import com.davidodhiambo.bestshows.util.Constants.Companion.SHOWS_ID
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,12 +31,14 @@ class DetailActivity : AppCompatActivity() {
         observeShow()
         disableViews()
 
+
+
     }
 
     private fun getIdFromIntent() {
 
         val intent = intent
-        id = intent.getIntExtra("id", 0)
+        id = intent.getIntExtra(SHOWS_ID, 0)
 
     }
 

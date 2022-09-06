@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BestShows</string>
+    <string name="details">Details</string>
+    <string name="id">ID:</string>
+    <string name="rating">Rating:</string>
+    <string name="show_info">Show Info</string>
+    <string name="network">Network:</string>
+    <string name="no_network">No network</string>
+    <string name="schedule">Schedule:</string>
+    <string name="no_schedule">No schedule</string>
+    <string name="at">at</string>
+    <string name="status">Status:</string>
+    <string name="no_status">No status</string>
+    <string name="type">Type:</string>
+    <string name="no_type">No type</string>
+    <string name="genres">Genres:</string>
+    <string name="no_genres">No genres</string>
+    <string name="official_site">Official site:</string>
+    <string name="no_official_site">No official site</string>
+</resources>

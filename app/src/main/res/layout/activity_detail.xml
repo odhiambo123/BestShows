@@ -5,12 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal_700"
     tools:context=".ui.detail.DetailActivity">
 
     <ScrollView
         android:id="@+id/mScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/material_dynamic_primary95">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@color/white"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 tools:text="Summary"/>
 

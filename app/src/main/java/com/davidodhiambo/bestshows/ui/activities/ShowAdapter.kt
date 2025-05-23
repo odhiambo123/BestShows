@@ -50,6 +50,7 @@ class ShowAdapter : RecyclerView.Adapter<ShowAdapter.ShowViewHolder>() {
 
     fun setShows(shows: List<Show>) {
         this.shows = shows
+        notifyDataSetChanged() // Add this line
     }
 
 

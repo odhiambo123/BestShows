@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.davidodhiambo.bestshows.data.model.Show
 import com.davidodhiambo.bestshows.repo.BestShowsRepository
+import com.davidodhiambo.bestshows.util.Resource // Added import
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,40 +16,19 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel@Inject constructor(private val bestShowsRepository: BestShowsRepository): ViewModel() {
 
-    private val show = MutableLiveData<Show>()
+    private val _show = MutableLiveData<Resource<Show>>()
+    val show: LiveData<Resource<Show>> = _show
 
     fun getShowById(id: Int) = viewModelScope.launch {
-
-        bestShowsRepository.getShows().let {
-
-            if (it.isSuccessful) {
-
-                for (showResponse in it.body()!!) {
-
-                    if (showResponse.id == id) {
-
-                        show.value = showResponse
-
-                    }
-
-                }
-
+        _show.postValue(Resource.Loading())
+        bestShowsRepository.getShowById(id).let { response ->
+            if (response.isSuccessful) {
+                response.body()?.let { responseBody ->
+                    _show.postValue(Resource.Success(responseBody))
+                } ?: _show.postValue(Resource.Error("Show not found or empty response"))
             } else {
-
-                Log.e("Error: ", it.code().toString())
-
+                _show.postValue(Resource.Error("Error: ${response.code()} - ${response.message()}"))
             }
-
         }
-
     }
-
-    fun getShow(): LiveData<Show> = show
-
-
-    fun observeShow(): LiveData<Show> {
-        return show
-    }
-
-
 }

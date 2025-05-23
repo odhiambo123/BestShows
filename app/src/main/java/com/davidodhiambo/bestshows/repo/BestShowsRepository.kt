@@ -7,4 +7,6 @@ class BestShowsRepository @Inject constructor(private val bestShowsApi: ShowsApi
 
     suspend fun getShows() = bestShowsApi.getShows()
 
+    suspend fun getShowById(id: Int) = bestShowsApi.getShowById(id)
+
 }
